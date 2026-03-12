@@ -4,19 +4,39 @@ title: "Open F1 Data Acquisition"
 
 # F1 Lap Time vs Finished Position
 
-F1 has been gaining its popluarity this past few years. There are always a driver who dominates the championship. 
+Formula 1 has grown dramatically in popularity in recent years, attracting a new generation of fans and analysts. Each season typically features one or two dominant drivers who consistently finish at the top of the standings.
+This raises an interesting analytical question:
 
-## Can we predict who will be the dominator? 
+## Can race results be partially explained by lap time performance metrics?
 
-Set of variables that may be interesting to look at can be ```position```(finished position) and ```best_lap```(best lap time), and artificial variable called ```consistency```. 
+Using publicly available data from the OpenF1 API, we perform a simple exploratory data analysis (EDA) to investigate the relationship between:
+- Best lap time
+- Lap time consistency
+- Final race position
+
+Dominant drivers often appear to have both:
+- strong raw pace
+- strong consistency
+We can attempt to quantify these traits using lap time statistics derived from race telemetry.
+
+| Variable      | Description                                     |
+| ------------- | ----------------------------------------------- |
+| ```position```    | Final finishing position in a race              |
+| ```best_lap```    | Fastest lap time achieved by a driver in a race |
+| ```avg_lap```     | Average lap time for a driver during a race     |
+| ```consistency``` | Standard deviation of lap times for a driver    |
+
 
 ## Ethical Question
 
-Data is available at [OpenF1](https://openf1.org) for free for personal use. "The entire project is open source, community-driven, and built with transparency", so we can rely on generosity and accuracy. 
+The dataset used in this analysis is obtained from [OpenF1](https://openf1.org). OpenF1 provides free access to Formula 1 telemetry and race data through an open API.
+### “The entire project is open source, community-driven, and built with transparency.” 
+Because the data is openly available and intended for public use, it is appropriate for educational analysis and experimentation. However, users should be aware of API usage limits and the importance of responsible data access.
+
 
 ## Basic API Practice
 
-Here are steps to fetch the data with API to season results. 
+The OpenF1 API provides several endpoints for retrieving race telemetry, session data, weather information, and more. We begin by retrieving all sessions for a given season.
 
 ```python
 import pandas as pd
@@ -35,20 +55,28 @@ def get_season_results(season: int) -> pd.DataFrame:
     return pd.DataFrame(session_data)
 ```
 
-This will give you,
+Example usage:
 
 ```python
 # Example usage
 df = get_season_results(2023)
 df.head()
 ```
+This produces a table containing metadata about each session in the season.
 
 |          | session_key | session_name | ... |
 | -------- | -------- | -------- | -------- |
 |       0  |   9222   | Practice | ... |
 |       1  |   7763   | Practice | ... |
 
-For our EDA, we merge and stack Sessions result and Laps datasets across 15 sessions in 2023 season. We will also add artificial features called ```best_lap```, ```consistency``` and ```avg_lap``` which are just the best lap time, standard deviation and the average lap time for the drivers. 
+Each session_key uniquely identifies a race session and allows us to retrieve lap-level telemetry data.
+
+For this exploratory analysis we combine two datasets:
+- Session Results – finishing positions for each driver
+- Lap Data – individual lap times recorded during the race
+These datasets are merged using the keys:
+- ```session_key```
+- ```driver_number```
 
 ## Overview on Laps datasets and Session result datasets
 
@@ -57,14 +85,34 @@ Here's the quick overview for our Laps and Session result datasets.
 ### Driver Stats
 
 - **Total sample size**: (1802, 6)
-- **Main features**: ```session_key``` (References races), ```driver_number``` (References drivers), ```avg_lap```(Average lap time grouped by ```driver_number``` and ```session_key```), ```best_lap```(Average lap time grouped by ```driver_number``` and ```session_key```), ```consistency```(Standard deviation for the lap time grouped by ```driver_number``` and ```session_key```), ```position```(Finished position grouped by ```driver_number``` and ```session_key```)
-- **Transformation**: Stacked data was grouped by ```driver_number``` and ```session_key```, and new artificial featrues, ```best_lap```, ```consistency``` and ```avg_lap```, are created.
-- **Causions**: Data is clean, well organized, however, ```lap_time``` and ```position``` variables are heavily based on the ```session_key``` becuase each racing track has difference track distance, layout, and orientation. This EDA did not take that an account for simplicity.
+- **Main features and transormations**:
+
+| Variable        | Description                               |
+| --------------- | ----------------------------------------- |
+| `session_key`   | Identifies the race session               |
+| `driver_number` | Unique identifier for each driver         |
+| `avg_lap`       | Average lap time for the driver in a race |
+| `best_lap`      | Fastest lap recorded by the driver        |
+| `consistency`   | Standard deviation of lap times           |
+| `position`      | Final finishing position                  |
+
+- **Causions**: A key limitation of this dataset is that lap times vary significantly between circuits.
+Tracks differ in:
+- circuit length
+- number of corners
+- track layout
+- elevation changes
+- accidents
+Because of these differences, raw lap times are not directly comparable across races. In more advanced analyses, lap times are often normalized relative to the fastest lap in each race.
+For simplicity, this exploratory analysis uses raw lap times while acknowledging this limitation.
 
 ### More information about the data
 
-You can perform your own EDA on OpenF1 datasets! Check out [OpenF1 API endpoints](https://openf1.org/docs/#api-endpoints) for more datasets to explore!
+You can perform your own analysis on OpenF1 datasets! Check out [OpenF1 API endpoints](https://openf1.org/docs/#api-endpoints) for documentation.
 
-Check out my (Github repo)[https://github.com/Vaoikun/Data_Acquisition_Blog] for full code.
+The complete code used in this analysis can be found on (Github repo)[https://github.com/Vaoikun/Data_Acquisition_Blog].
 
-Thank you for reading!
+## Conclusion
+Open telemetry datasets such as OpenF1 provide a valuable opportunity to explore motorsport performance data using modern data science tools. Even simple statistical measures such as lap consistency and best lap time can reveal meaningful insights about driver performance.
+
+As Formula 1 continues to expand its data availability, opportunities for deeper analytics will only grow.
