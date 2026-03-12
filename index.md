@@ -35,7 +35,7 @@ Learn how I explore datasets to find interesting patterns and answer questions.
 :::
 
 ::: {.g-col-6}
-### [F1 Lap Time vs Finished Position](projects/data-acquisition.qmd)
+### [F1 Lap Time vs Finished Position](projects/eda.qmd)
 See how I gather data from OpenF1 and prepare it for analysis.
 :::
 
