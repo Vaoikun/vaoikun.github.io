@@ -35,7 +35,7 @@ Learn how I explore datasets to find interesting patterns and answer questions.
 :::
 
 ::: {.g-col-6}
-### [Data Collection Project](projects/data-acquisition.qmd)
+### [OpenF1 Data Acquisition](projects/data-acquisition.qmd)
 See how I gather data from different sources and prepare it for analysis.
 :::
 
