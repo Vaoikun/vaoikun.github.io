@@ -106,6 +106,23 @@ Tracks differ in:
 Because of these differences, raw lap times are not directly comparable across races. In more advanced analyses, lap times are often normalized relative to the fastest lap in each race.
 For simplicity, this exploratory analysis uses raw lap times while acknowledging this limitation.
 
+### Exploratory Visualization
+
+After a few more lines of code, we can examine whether lap time consistency correlates with finishing position.
+
+<img src="consist_vs_pos.png" alt="Consistency vs Position" width="100">
+
+Similarly, we can examine the relationship between best lap time and finishing position.
+
+<img src="best_vs_position.png" alt="Best Lap vs Position" width="100">
+
+These plots provide a simple way to explore whether raw pace or lap consistency better predicts race performance.
+
+### Future Work
+
+This analysis represents a simple exploratory study. Several improvements could be made in future work, such as,
+incorporating tire strategy and pit stops, investigating weather effects, and compare driver performance across teams. OpenF1 provides many additional endpoints that could support more sophisticated analyses.
+
 ### More information about the data
 
 You can perform your own analysis on OpenF1 datasets! Check out [OpenF1 API endpoints](https://openf1.org/docs/#api-endpoints) for documentation.
