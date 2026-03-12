@@ -16,7 +16,7 @@ website:
       - text: "Tutorial"
         href: tutorial.md
       - text: "Data Acquisition"
-        href: data-acquisition.md
+        href: data-acquisition.qmd
       - text: "Projects"
         menu:
           - text: "All Projects"
@@ -39,7 +39,7 @@ website:
       contents:
         - projects/index.md
         - projects/eda.qmd
-        - projects/data-acquisition.qmd
+        - projects/data-acquisition.md
         - projects/final-project.qmd
 
 format:

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2025-01-01">
+<meta name="author" content="Vance Williams">
+<meta name="dcterms.date" content="2026-03-11">
 
-<title>Data Acquisition Project – Your Name - Data Science Portfolio</title>
+<title>Open F1 Data Acquisition – Your Name - Data Science Portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,7 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -105,12 +105,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -140,7 +143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Tutorial</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../data-acquisition.html"> 
+    <a class="nav-link" href="../data-acquisition.qmd"> 
 <span class="menu-text">Data Acquisition</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -185,61 +188,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../projects/data-acquisition.html">Data Acquisition Project</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../projects/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Projects Overview</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../projects/eda.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">EDA Project</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../projects/data-acquisition.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Data Acquisition Project</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../projects/final-project.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Final Project</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#f1-lap-time-vs-finished-position" id="toc-f1-lap-time-vs-finished-position" class="nav-link active" data-scroll-target="#f1-lap-time-vs-finished-position">F1 Lap Time vs Finished Position</a>
+  <ul class="collapse">
+  <li><a href="#can-race-results-be-partially-explained-by-lap-time-performance-metrics" id="toc-can-race-results-be-partially-explained-by-lap-time-performance-metrics" class="nav-link" data-scroll-target="#can-race-results-be-partially-explained-by-lap-time-performance-metrics">Can race results be partially explained by lap time performance metrics?</a></li>
+  <li><a href="#ethical-question" id="toc-ethical-question" class="nav-link" data-scroll-target="#ethical-question">Ethical Question</a></li>
+  <li><a href="#basic-api-practice" id="toc-basic-api-practice" class="nav-link" data-scroll-target="#basic-api-practice">Basic API Practice</a></li>
+  <li><a href="#overview-on-laps-datasets-and-session-result-datasets" id="toc-overview-on-laps-datasets-and-session-result-datasets" class="nav-link" data-scroll-target="#overview-on-laps-datasets-and-session-result-datasets">Overview on Laps datasets and Session result datasets</a>
+  <ul class="collapse">
+  <li><a href="#driver-stats" id="toc-driver-stats" class="nav-link" data-scroll-target="#driver-stats">Driver Stats</a></li>
+  </ul></li>
+  <li><a href="#exploratory-visualization" id="toc-exploratory-visualization" class="nav-link" data-scroll-target="#exploratory-visualization">Exploratory Visualization</a></li>
+  <li><a href="#future-work" id="toc-future-work" class="nav-link" data-scroll-target="#future-work">Future Work</a></li>
+  <li><a href="#more-information-about-the-data" id="toc-more-information-about-the-data" class="nav-link" data-scroll-target="#more-information-about-the-data">More Information About the Data</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Data Acquisition Project</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Open F1 Data Acquisition</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -249,14 +230,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
+             <p>Vance Williams </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 1, 2025</p>
+      <p class="date">March 11, 2026</p>
     </div>
   </div>
   
@@ -268,11 +249,331 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is coming down the pipeline. Check again later.</p>
+<section id="f1-lap-time-vs-finished-position" class="level1">
+<h1>F1 Lap Time vs Finished Position</h1>
+<p>Formula 1 has grown dramatically in popularity in recent years, attracting a new generation of fans and analysts. Each season typically features one or two dominant drivers who consistently finish at the top of the standings. This raises an interesting analytical question:</p>
+<section id="can-race-results-be-partially-explained-by-lap-time-performance-metrics" class="level2">
+<h2 class="anchored" data-anchor-id="can-race-results-be-partially-explained-by-lap-time-performance-metrics">Can race results be partially explained by lap time performance metrics?</h2>
+<p>Using publicly available data from the OpenF1 API, we perform a simple exploratory data analysis (EDA) to investigate the relationship between:</p>
+<ul>
+<li>Best lap time</li>
+<li>Lap time consistency</li>
+<li>Final race position</li>
+</ul>
+<p>Dominant drivers often appear to have both:</p>
+<ul>
+<li>strong raw pace</li>
+<li>strong consistency</li>
+</ul>
+<p>We can attempt to quantify these traits using lap time statistics derived from race telemetry.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>position</code></td>
+<td>Final finishing position in a race</td>
+</tr>
+<tr class="even">
+<td><code>best_lap</code></td>
+<td>Fastest lap time achieved by a driver in a race</td>
+</tr>
+<tr class="odd">
+<td><code>avg_lap</code></td>
+<td>Average lap time for a driver during a race</td>
+</tr>
+<tr class="even">
+<td><code>consistency</code></td>
+<td>Standard deviation of lap times for a driver</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ethical-question" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-question">Ethical Question</h2>
+<p>The dataset used in this analysis is obtained from <a href="https://openf1.org">OpenF1</a>. OpenF1 provides free access to Formula 1 telemetry and race data through an open API.</p>
+<blockquote class="blockquote">
+<p>“The entire project is open source, community-driven, and built with transparency.”</p>
+</blockquote>
+<p>Because the data is openly available and intended for public use, it is appropriate for educational analysis and experimentation. However, users should be aware of API usage limits and the importance of responsible data access.</p>
+</section>
+<section id="basic-api-practice" class="level2">
+<h2 class="anchored" data-anchor-id="basic-api-practice">Basic API Practice</h2>
+<p>The OpenF1 API provides several endpoints for retrieving race telemetry, session data, weather information, and more. We begin by retrieving all sessions for a given season.</p>
+<div id="05b7cedc" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>BASE_URL <span class="op">=</span> <span class="st">"https://api.openf1.org/v1"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_season_results(season: <span class="bu">int</span>) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>BASE_URL<span class="sc">}</span><span class="ss">/sessions"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {<span class="st">"year"</span>: season}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    sessions <span class="op">=</span> requests.get(url, params<span class="op">=</span>params)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    sessions.raise_for_status()</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    session_data <span class="op">=</span> sessions.json()</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(session_data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Example usage:</p>
+<div id="b4262295" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> get_season_results(<span class="dv">2023</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">session_key</th>
+<th data-quarto-table-cell-role="th">session_type</th>
+<th data-quarto-table-cell-role="th">session_name</th>
+<th data-quarto-table-cell-role="th">date_start</th>
+<th data-quarto-table-cell-role="th">date_end</th>
+<th data-quarto-table-cell-role="th">meeting_key</th>
+<th data-quarto-table-cell-role="th">circuit_key</th>
+<th data-quarto-table-cell-role="th">circuit_short_name</th>
+<th data-quarto-table-cell-role="th">country_key</th>
+<th data-quarto-table-cell-role="th">country_code</th>
+<th data-quarto-table-cell-role="th">country_name</th>
+<th data-quarto-table-cell-role="th">location</th>
+<th data-quarto-table-cell-role="th">gmt_offset</th>
+<th data-quarto-table-cell-role="th">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>9222</td>
+<td>Practice</td>
+<td>Day 1</td>
+<td>2023-02-23T07:00:00+00:00</td>
+<td>2023-02-23T16:30:00+00:00</td>
+<td>1140</td>
+<td>63</td>
+<td>Sakhir</td>
+<td>36</td>
+<td>BRN</td>
+<td>Bahrain</td>
+<td>Sakhir</td>
+<td>03:00:00</td>
+<td>2023</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>7763</td>
+<td>Practice</td>
+<td>Day 2</td>
+<td>2023-02-24T07:00:00+00:00</td>
+<td>2023-02-24T16:30:00+00:00</td>
+<td>1140</td>
+<td>63</td>
+<td>Sakhir</td>
+<td>36</td>
+<td>BRN</td>
+<td>Bahrain</td>
+<td>Sakhir</td>
+<td>03:00:00</td>
+<td>2023</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>7764</td>
+<td>Practice</td>
+<td>Day 3</td>
+<td>2023-02-25T07:00:00+00:00</td>
+<td>2023-02-25T16:30:00+00:00</td>
+<td>1140</td>
+<td>63</td>
+<td>Sakhir</td>
+<td>36</td>
+<td>BRN</td>
+<td>Bahrain</td>
+<td>Sakhir</td>
+<td>03:00:00</td>
+<td>2023</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>7765</td>
+<td>Practice</td>
+<td>Practice 1</td>
+<td>2023-03-03T11:30:00+00:00</td>
+<td>2023-03-03T12:30:00+00:00</td>
+<td>1141</td>
+<td>63</td>
+<td>Sakhir</td>
+<td>36</td>
+<td>BRN</td>
+<td>Bahrain</td>
+<td>Sakhir</td>
+<td>03:00:00</td>
+<td>2023</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>7766</td>
+<td>Practice</td>
+<td>Practice 2</td>
+<td>2023-03-03T15:00:00+00:00</td>
+<td>2023-03-03T16:00:00+00:00</td>
+<td>1141</td>
+<td>63</td>
+<td>Sakhir</td>
+<td>36</td>
+<td>BRN</td>
+<td>Bahrain</td>
+<td>Sakhir</td>
+<td>03:00:00</td>
+<td>2023</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>This produces a table containing metadata about each session in the season.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>session_key</th>
+<th>session_name</th>
+<th>…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>9222</td>
+<td>Practice</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>7763</td>
+<td>Practice</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<p>Each <code>session_key</code> uniquely identifies a race session and allows us to retrieve lap-level telemetry data.</p>
+<p>For this exploratory analysis we combine two datasets:</p>
+<ul>
+<li>Session Results – finishing positions for each driver</li>
+<li>Lap Data – individual lap times recorded during the race</li>
+</ul>
+<p>These datasets are merged using the keys:</p>
+<ul>
+<li><code>session_key</code></li>
+<li><code>driver_number</code></li>
+</ul>
+</section>
+<section id="overview-on-laps-datasets-and-session-result-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="overview-on-laps-datasets-and-session-result-datasets">Overview on Laps datasets and Session result datasets</h2>
+<p>Here’s the quick overview for our Laps and Session result datasets.</p>
+<section id="driver-stats" class="level3">
+<h3 class="anchored" data-anchor-id="driver-stats">Driver Stats</h3>
+<ul>
+<li><strong>Total sample size:</strong> <code>(1802, 6)</code></li>
+<li><strong>Main features and transformations:</strong></li>
+</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>session_key</code></td>
+<td>Identifies the race session</td>
+</tr>
+<tr class="even">
+<td><code>driver_number</code></td>
+<td>Unique identifier for each driver</td>
+</tr>
+<tr class="odd">
+<td><code>avg_lap</code></td>
+<td>Average lap time for the driver in a race</td>
+</tr>
+<tr class="even">
+<td><code>best_lap</code></td>
+<td>Fastest lap recorded by the driver</td>
+</tr>
+<tr class="odd">
+<td><code>consistency</code></td>
+<td>Standard deviation of lap times</td>
+</tr>
+<tr class="even">
+<td><code>position</code></td>
+<td>Final finishing position</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cautions:</strong><br>
+A key limitation of this dataset is that lap times vary significantly between circuits.</p>
+<p>Tracks differ in:</p>
+<ul>
+<li>circuit length</li>
+<li>number of corners</li>
+<li>track layout</li>
+<li>elevation changes</li>
+<li>accidents</li>
+</ul>
+<p>Because of these differences, raw lap times are not directly comparable across races. In more advanced analyses, lap times are often normalized relative to the fastest lap in each race. For simplicity, this exploratory analysis uses raw lap times while acknowledging this limitation.</p>
+</section>
+</section>
+<section id="exploratory-visualization" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-visualization">Exploratory Visualization</h2>
+<p>After a few more lines of code, we can examine whether lap time consistency correlates with finishing position.</p>
+<p><img src="consist_vs_pos.png" class="img-fluid"></p>
+<p>Similarly, we can examine the relationship between best lap time and finishing position.</p>
+<p><img src="best_vs_position.png" class="img-fluid"></p>
+<p>These plots provide a simple way to explore whether raw pace or lap consistency better predicts race performance.</p>
+</section>
+<section id="future-work" class="level2">
+<h2 class="anchored" data-anchor-id="future-work">Future Work</h2>
+<p>This analysis represents a simple exploratory study. Several improvements could be made in future work, such as:</p>
+<ul>
+<li>incorporating tire strategy and pit stops</li>
+<li>investigating weather effects</li>
+<li>comparing driver performance across teams</li>
+</ul>
+<p>OpenF1 provides many additional endpoints that could support more sophisticated analyses.</p>
+</section>
+<section id="more-information-about-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="more-information-about-the-data">More Information About the Data</h2>
+<p>You can perform your own analysis on OpenF1 datasets. Check out the<br>
+<a href="https://openf1.org/docs/#api-endpoints">OpenF1 API endpoints</a> for documentation.</p>
+<p>The complete code used in this analysis can be found on the<br>
+<a href="https://github.com/Vaoikun/Data_Acquisition_Blog">GitHub repository</a>.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Open telemetry datasets such as OpenF1 provide a valuable opportunity to explore motorsport performance data using modern data science tools. Even simple statistical measures such as lap consistency and best lap time can reveal meaningful insights about driver performance.</p>
+<p>As Formula 1 continues to expand its data availability, opportunities for deeper analytics will only grow.</p>
 
 
 <!-- -->
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -726,17 +1027,164 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Data Acquisition Project"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-01-01"</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>This is coming down the pipeline. Check again later.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Open F1 Data Acquisition"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Vance Williams"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-03-11"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu"># F1 Lap Time vs Finished Position</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>Formula 1 has grown dramatically in popularity in recent years, attracting a new generation of fans and analysts. Each season typically features one or two dominant drivers who consistently finish at the top of the standings. This raises an interesting analytical question:</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Can race results be partially explained by lap time performance metrics?</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>Using publicly available data from the OpenF1 API, we perform a simple exploratory data analysis (EDA) to investigate the relationship between:</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Best lap time</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lap time consistency</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Final race position</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>Dominant drivers often appear to have both:</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>strong raw pace</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>strong consistency</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>We can attempt to quantify these traits using lap time statistics derived from race telemetry.</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Variable <span class="pp">|</span> Description <span class="pp">|</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|-------------|</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`position`</span> <span class="pp">|</span> Final finishing position in a race <span class="pp">|</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`best_lap`</span> <span class="pp">|</span> Fastest lap time achieved by a driver in a race <span class="pp">|</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`avg_lap`</span> <span class="pp">|</span> Average lap time for a driver during a race <span class="pp">|</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`consistency`</span> <span class="pp">|</span> Standard deviation of lap times for a driver <span class="pp">|</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ethical Question</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>The dataset used in this analysis is obtained from <span class="co">[</span><span class="ot">OpenF1</span><span class="co">](https://openf1.org)</span>. OpenF1 provides free access to Formula 1 telemetry and race data through an open API.</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; “The entire project is open source, community-driven, and built with transparency.”</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>Because the data is openly available and intended for public use, it is appropriate for educational analysis and experimentation. However, users should be aware of API usage limits and the importance of responsible data access.</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## Basic API Practice</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>The OpenF1 API provides several endpoints for retrieving race telemetry, session data, weather information, and more. We begin by retrieving all sessions for a given season.</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>BASE_URL <span class="op">=</span> <span class="st">"https://api.openf1.org/v1"</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_season_results(season: <span class="bu">int</span>) <span class="op">-&gt;</span> pd.DataFrame:</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>BASE_URL<span class="sc">}</span><span class="ss">/sessions"</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {<span class="st">"year"</span>: season}</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    sessions <span class="op">=</span> requests.get(url, params<span class="op">=</span>params)</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    sessions.raise_for_status()</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>    session_data <span class="op">=</span> sessions.json()</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(session_data)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>Example usage:</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> get_season_results(<span class="dv">2023</span>)</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>df.head()</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>This produces a table containing metadata about each session in the season.</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   <span class="pp">|</span> session_key <span class="pp">|</span> session_name <span class="pp">|</span> ... <span class="pp">|</span></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|---|-------------|--------------|-----|</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>0<span class="pp">|</span>9222<span class="pp">|</span>Practice<span class="pp">|</span>...<span class="pp">|</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>1<span class="pp">|</span>7763<span class="pp">|</span>Practice<span class="pp">|</span>...<span class="pp">|</span></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>Each <span class="in">`session_key`</span> uniquely identifies a race session and allows us to retrieve lap-level telemetry data.</span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>For this exploratory analysis we combine two datasets:</span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Session Results – finishing positions for each driver</span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Lap Data – individual lap times recorded during the race</span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>These datasets are merged using the keys:</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`session_key`</span></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`driver_number`</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overview on Laps datasets and Session result datasets</span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>Here's the quick overview for our Laps and Session result datasets.</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a><span class="fu">### Driver Stats</span></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Total sample size:** <span class="in">`(1802, 6)`</span></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Main features and transformations:**</span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Variable <span class="pp">|</span> Description <span class="pp">|</span></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|-------------|</span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`session_key`</span> <span class="pp">|</span> Identifies the race session <span class="pp">|</span></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`driver_number`</span> <span class="pp">|</span> Unique identifier for each driver <span class="pp">|</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`avg_lap`</span> <span class="pp">|</span> Average lap time for the driver in a race <span class="pp">|</span></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`best_lap`</span> <span class="pp">|</span> Fastest lap recorded by the driver <span class="pp">|</span></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`consistency`</span> <span class="pp">|</span> Standard deviation of lap times <span class="pp">|</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`position`</span> <span class="pp">|</span> Final finishing position <span class="pp">|</span></span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>**Cautions:**  </span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>A key limitation of this dataset is that lap times vary significantly between circuits.</span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>Tracks differ in:</span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>circuit length</span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>number of corners</span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>track layout</span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>elevation changes</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>accidents</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>Because of these differences, raw lap times are not directly comparable across races. In more advanced analyses, lap times are often normalized relative to the fastest lap in each race. For simplicity, this exploratory analysis uses raw lap times while acknowledging this limitation.</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exploratory Visualization</span></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>After a few more lines of code, we can examine whether lap time consistency correlates with finishing position.</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="al">![](consist_vs_pos.png)</span></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>Similarly, we can examine the relationship between best lap time and finishing position.</span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a><span class="al">![](best_vs_position.png)</span></span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>These plots provide a simple way to explore whether raw pace or lap consistency better predicts race performance.</span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="fu">## Future Work</span></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>This analysis represents a simple exploratory study. Several improvements could be made in future work, such as:</span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>incorporating tire strategy and pit stops</span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>investigating weather effects</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>comparing driver performance across teams</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a>OpenF1 provides many additional endpoints that could support more sophisticated analyses.</span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## More Information About the Data</span></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>You can perform your own analysis on OpenF1 datasets. Check out the  </span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">OpenF1 API endpoints</span><span class="co">](https://openf1.org/docs/#api-endpoints)</span> for documentation.</span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>The complete code used in this analysis can be found on the  </span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">GitHub repository</span><span class="co">](https://github.com/Vaoikun/Data_Acquisition_Blog)</span>.</span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>Open telemetry datasets such as OpenF1 provide a valuable opportunity to explore motorsport performance data using modern data science tools. Even simple statistical measures such as lap consistency and best lap time can reveal meaningful insights about driver performance.</span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>As Formula 1 continues to expand its data availability, opportunities for deeper analytics will only grow.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
