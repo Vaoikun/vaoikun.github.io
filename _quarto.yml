@@ -15,8 +15,6 @@ website:
         href: about.md
       - text: "Tutorial"
         href: tutorial.md
-      - text: "Data Acquisition"
-        href: data-acquisition.qmd
       - text: "Projects"
         menu:
           - text: "All Projects"
